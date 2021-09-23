@@ -28,6 +28,7 @@ describe('03_separation-of-concerns-demo routes', () => {
         });
       });
   });
+
   it('gets total order from /orders', () => {
     return request(app)
       .get('/api/v1/orders')
@@ -36,6 +37,17 @@ describe('03_separation-of-concerns-demo routes', () => {
           id: '1',
           quantity: 10
         }]);
+      }); 
+  });
+
+  it('gets order item from /orders/:id', () => {
+    return request(app)
+      .get('/api/v1/orders/2')
+      .then(res => {
+        expect(res.body).toEqual({
+          id: '2',
+          quantity: 10
+        });
       }); 
   });
 });
