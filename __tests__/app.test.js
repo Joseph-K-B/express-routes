@@ -56,5 +56,10 @@ describe('03_separation-of-concerns-demo routes', () => {
       .delete('/api/v1/orders/1');
     expect(res.body).toEqual({});
   });
+  
+  it('updates or creates order ny id using patch method', async() => {
+    const res = await request(app)
+      .patch('/api/v1/orders/2');
+    expect(res.body).toEqual('xyz');
+  });
 });
-
