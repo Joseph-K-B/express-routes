@@ -42,10 +42,10 @@ describe('03_separation-of-concerns-demo routes', () => {
 
   it('gets order item from /orders/:id', () => {
     return request(app)
-      .get('/api/v1/orders/2')
+      .get('/api/v1/orders/1')
       .then(res => {
         expect(res.body).toEqual({
-          id: '2',
+          id: '1',
           quantity: 10
         });
       }); 
