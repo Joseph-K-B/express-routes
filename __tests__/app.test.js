@@ -50,5 +50,11 @@ describe('03_separation-of-concerns-demo routes', () => {
         });
       }); 
   });
+
+  it('deletes order item using id', async() => {
+    const res = await request(app)
+      .delete('/api/v1/orders/1');
+    expect(res.body).toEqual({});
+  });
 });
 
